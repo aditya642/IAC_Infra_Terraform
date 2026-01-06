@@ -172,3 +172,59 @@ sqldb = {
     }
   }
 }
+
+loadbalancers = {
+  "lb1" = {
+    name                      = "lb-todoapp"
+    location                  = "centralIndia"
+    resource_group_name       = "rg_todo"
+    sku                       = "Standard"
+    public_ip_name            = "frontend-ip-config-pip"
+    ip_configuration_name     = "frontend-ip-config"
+    backend_address_pool_name = "todoapp-backend-pool"
+    healthprobe_name          = "todoapp-health-probe"
+    healthprobe_port          = 80
+    healthprobe_protocol      = "Http"
+    lbrule_name               = "todoapp-lb-rule"
+ }
+}
+
+# loadbalancer = {
+#     lb1 = {
+#       name                = "todo-lb"
+#       location            = "eastus"
+#       resource_group_name = "rg-todo"
+#       sku                 = "Standard"
+
+#       frontend_ip_configurations = [
+#         {
+#           name                 = "public-fe"
+#           public_ip_address_id = azurerm_public_ip.pip1.id
+#         }
+#       ]
+
+#       backend_pools = [
+#         { name = "todo-bepool" }
+#       ]
+
+#       probes = [
+#         {
+#           name     = "http-probe"
+#           protocol = "Tcp"
+#           port     = 80
+#         }
+#       ]
+
+#       rules = [
+#         {
+#           name              = "http-rule"
+#           protocol          = "Tcp"
+#           frontend_port     = 80
+#           backend_port      = 80
+#           frontend_ip_name  = "public-fe"
+#           backend_pool_name = "todo-bepool"
+#           probe_name        = "http-probe"
+#         }
+#       ]
+#     }
+#   }

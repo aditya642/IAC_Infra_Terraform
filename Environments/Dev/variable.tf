@@ -14,3 +14,5 @@ variable "vm" {}
 variable "key_vault" {}
 variable "msqlserver" {}
 variable "sqldb" {}
+variable "loadbalancers" {}
+# variable "loadbalancer" {}

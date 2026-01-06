@@ -36,3 +36,8 @@ module "sqldb" {
   source     = "../../Modules/azurerm_SQL_database"
   sqldb      = var.sqldb
 }
+
+module "loadbalancers" {
+  source = "../../Modules/azurerm_loadbalancer"
+  loadbalancers = var.loadbalancers
+}
